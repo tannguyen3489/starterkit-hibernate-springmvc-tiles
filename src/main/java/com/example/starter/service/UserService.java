@@ -18,4 +18,6 @@ public interface UserService {
      * @return User entity object of the current session's signed in user
      */
     public User getCurrentUser();
+    public Object test();
+    public Object test2();
 }

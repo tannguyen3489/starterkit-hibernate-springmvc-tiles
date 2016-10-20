@@ -4,7 +4,10 @@
  **/
 package com.example.starter.dao;
 
+import com.example.starter.entity.App;
 import com.example.starter.entity.User;
+
+import java.util.List;
 
 /**
  * This interface defines data access routines related to user details.
@@ -19,5 +22,7 @@ public interface UserDao {
      * @param username username of the user which needs to query for
      * @return an instance of User if the user is found, null otherwise
      **/
-    public User findUserByUsername(String username);
+    User findUserByUsername(String username);
+    List<App> findUserById(long userId);
+    List<App> searchByLucene(String queryKey) throws InterruptedException;
 }

@@ -34,8 +34,8 @@
         <property name="packagesToScan" value="com.example.starter.entity" />
         <property name="hibernateProperties">
             <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.connection.zeroDateTimeBehavior">convertToNull</prop>
                 <!-- Connection Pool Properties -->
@@ -54,6 +54,11 @@
                 <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
                 <prop key="hibernate.cache.use_second_level_cache">true</prop>
                 <prop key="hibernate.cache.use_query_cache">true</prop>
+                <prop key="hibernate.connection.url">jdbc:postgresql://localhost:5432/project</prop>
+                <prop key="hibernate.connection.driver_class">org.postgresql.Driver</prop>
+
+                <prop key="hibernate.search.default.directory_provider">filesystem</prop>
+                <prop key="hibernate.search.default.indexBase">target/lucenceIndex</prop>
             </props>
         </property>
     </bean>

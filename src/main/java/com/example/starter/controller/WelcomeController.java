@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.starter.entity.User;
 import com.example.starter.service.UserService;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * This controller facilitates actions related to general user welcome and admin welcome pages.
@@ -33,6 +34,19 @@ public class WelcomeController {
      **/
     @Autowired
     UserService userDetailsService;
+
+
+    @RequestMapping(method = RequestMethod.GET, value = { "/test.do" })
+    @ResponseBody
+    public Object test(Model model) {
+        return userDetailsService.test();
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = { "/test1.do" })
+    @ResponseBody
+    public Object test1(Model model) {
+        return userDetailsService.test2();
+    }
     
     /**
      * Handles requests to the /welcome.do page

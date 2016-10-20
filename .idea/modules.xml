@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../HibernateInSample/9205_01_codes/chapter1/chapter1.iml" filepath="$PROJECT_DIR$/../../HibernateInSample/9205_01_codes/chapter1/chapter1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/starterkit-hibernate-springmvc-tiles.iml" filepath="$PROJECT_DIR$/starterkit-hibernate-springmvc-tiles.iml" />
+    </modules>
+  </component>
+</project>

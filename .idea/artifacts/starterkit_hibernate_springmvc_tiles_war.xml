@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="starterkit-hibernate-springmvc-tiles:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="starterkit-hibernate-springmvc-tiles.war">
+      <element id="artifact" artifact-name="starterkit-hibernate-springmvc-tiles:war exploded" />
+    </root>
+  </artifact>
+</component>

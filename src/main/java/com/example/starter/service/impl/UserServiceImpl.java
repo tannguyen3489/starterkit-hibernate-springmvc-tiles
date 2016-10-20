@@ -4,28 +4,32 @@
  **/
 package com.example.starter.service.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-
+import com.example.starter.dao.UserDao;
+import com.example.starter.dao.impl.AppDao;
+import com.example.starter.entity.Role;
+import com.example.starter.entity.User;
+import com.example.starter.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
-import com.example.starter.dao.UserDao;
-import com.example.starter.entity.Role;
-import com.example.starter.entity.User;
-import com.example.starter.service.UserService;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 
 @Service("userDetailsService")
-public class UserServiceImpl implements UserService, UserDetailsService {
+public class UserServiceImpl implements UserService, UserDetailsService, InitializingBean {
     
     @Autowired
     UserDao userDao;
+
+    @Autowired
+    AppDao appDao;
 
     private static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
     
@@ -56,5 +60,22 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userDao.findUserByUsername(
                 ((org.springframework.security.core.userdetails.User)SecurityContextHolder.getContext().
                         getAuthentication().getPrincipal()).getUsername());
+    }
+
+    public Object test() {
+        return userDao.findUserById(1l);
+    }
+
+    public Object test2() {
+        try {
+            return userDao.searchByLucene("amazing");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void afterPropertiesSet() throws Exception {
+//        appDao.contextInitialized();
     }
 }
